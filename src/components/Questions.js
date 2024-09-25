@@ -1,10 +1,13 @@
+import { useContextQuiz } from "../context/contextQuiz";
 import Option from "./option";
-function Questions({ questions, dispatch, answer }) {
+function Questions() {
+  const { questions, index } = useContextQuiz();
+  const question = questions.at(index);
   return (
     <div>
       <h4>{questions.question}</h4>
       <div className="options">
-        <Option answer={answer} questions={questions} dispatch={dispatch} />
+        <Option question={question} />
       </div>
     </div>
   );

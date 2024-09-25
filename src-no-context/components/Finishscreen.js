@@ -1,7 +1,4 @@
-import { useContextQuiz } from "../context/contextQuiz";
-
-function Finishscreen() {
-  const { points, maxPoints, highScore, dispatch } = useContextQuiz();
+function Finishscreen({ points, maxPoints, highScore, dispatch }) {
   let precentage = Math.ceil((points / maxPoints) * 100);
   return (
     <>

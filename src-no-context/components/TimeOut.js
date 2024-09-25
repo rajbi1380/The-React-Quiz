@@ -1,7 +1,4 @@
-import { useContextQuiz } from "../context/contextQuiz";
-
-function TimeOut() {
-  const { points, maxPoints, dispatch } = useContextQuiz();
+function TimeOut({ points, maxPoints, dispatch }) {
   let precentage = Math.ceil((points / maxPoints) * 100);
   return (
     <>

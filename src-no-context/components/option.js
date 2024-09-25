@@ -1,19 +1,14 @@
-import { useContextQuiz } from "../context/contextQuiz";
-
-function Option({ question }) {
-  const { dispatch, answer } = useContextQuiz();
-  console.log(question);
+function Option({ questions, dispatch, answer }) {
   let hasAnswer = answer !== null;
-
   return (
     <>
-      {question.options.map((option, index) => (
+      {questions.options.map((option, index) => (
         <button
           disabled={hasAnswer}
           onClick={() => dispatch({ type: "answer", payload: index })}
           className={`btn btn-option ${answer === index ? "answer" : ""} ${
             hasAnswer
-              ? index === question.correctOption
+              ? index === questions.correctOption
                 ? "correct"
                 : "wrong"
               : ""
